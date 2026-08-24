@@ -1,0 +1,160 @@
+# Skill 1 – Linux, Git, Shell and Process Management
+
+## Objective
+
+To set up a Linux development environment, configure GCC and Git, understand basic shell architecture, create a project structure, and study process management using Linux system calls.
+
+## 1. Installation and Setup
+
+### Linux VM
+
+Install and configure a Linux virtual machine to provide a Linux environment for Operating Systems practical work.
+
+### GCC Configuration
+
+Install and configure the GCC compiler for compiling and executing C programs.
+
+Check GCC installation using:
+
+```bash
+gcc --version
+```
+
+### Git Repository Setup
+
+Create and configure a Git repository for maintaining practical programs and documentation.
+
+Initialize a repository using:
+
+```bash
+git init
+```
+
+### Project Structure
+
+Create an organized project structure for storing C programs, README files, and other practical-related files.
+
+Example:
+
+```text
+Skill1/
+├── README.md
+├── practical1.c
+├── practical2.c
+└── practical3.c
+```
+
+### Shell Architecture
+
+Understand the role of the Linux shell as an interface between the user and the operating system.
+
+Basic shell commands include:
+
+```bash
+pwd
+ls
+cd
+mkdir
+touch
+cat
+```
+
+### Makefile
+
+Create an initial `Makefile` to automate the compilation of C programs.
+
+Example:
+
+```makefile
+CC = gcc
+
+all:
+	$(CC) practical1.c -o practical1
+
+clean:
+	rm -f practical1
+```
+
+## 2. Process Abstraction
+
+Study the concept of processes and understand how the operating system represents and manages running programs.
+
+### `fork()`
+
+Use the `fork()` system call to create a new child process.
+
+```c
+pid = fork();
+```
+
+The return value of `fork()` determines whether the code is executing in the parent or child process.
+
+### `exec()` Family
+
+Understand the `exec()` family of system calls, which replaces the current process image with a new program.
+
+Common functions include:
+
+* `execl()`
+* `execv()`
+* `execlp()`
+* `execvp()`
+
+### Parent-Child Relationships
+
+Analyze the relationship between a parent process and its child process using:
+
+```c
+getpid()
+getppid()
+```
+
+`getpid()` returns the current process ID, while `getppid()` returns the parent process ID.
+
+### Process Tree
+
+Inspect the hierarchy of processes created by the system using commands such as:
+
+```bash
+ps
+```
+
+```bash
+ps -f
+```
+
+```bash
+pstree
+```
+
+### System Call Tracing
+
+Practice observing system calls made by a program using `strace`.
+
+Example:
+
+```bash
+strace ./program
+```
+
+This helps analyze system calls such as `fork()`, `exec()`, `read()`, `write()`, and `open()`.
+
+## Learning Outcomes
+
+After completing Skill 1, the learner should be able to:
+
+* Set up a Linux development environment.
+* Configure and use GCC.
+* Create and manage a Git repository.
+* Understand basic Linux shell commands and architecture.
+* Create a basic Makefile.
+* Understand process abstraction.
+* Create processes using `fork()`.
+* Understand the `exec()` family of system calls.
+* Analyze parent-child process relationships.
+* Inspect process hierarchies.
+* Trace system calls using `strace`.
+
+## Conclusion
+
+Thus, the Linux environment, GCC, Git repository, project structure, shell concepts, and Makefile were set up successfully, and the fundamentals of process creation, process relationships, process trees, and system call tracing were studied.
