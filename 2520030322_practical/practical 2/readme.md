@@ -1,1 +1,3 @@
+This practical demonstrates file handling and system calls in Linux. A C program is used to copy the contents of sample.txt into copy.txt using the system calls open(), read(), write(), and close(). First, open() opens the source and destination files. Then read() reads the data into a buffer and write() copies that data into the destination file. Finally, close() closes both files.
 
+The practical also uses the strace utility with cat sample.txt to observe the system calls made by a Linux command. This helps us understand how a user-space program communicates with the Linux kernel to access and display file contents.
