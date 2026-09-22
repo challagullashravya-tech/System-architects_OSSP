@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main()
+{
+    int pid = fork();
+
+    if (pid == 0)
+    {
+        printf("Child process running...\n");
+        printf("Child PID: %d\n", getpid());
+
+        return 0;
+    }
+    else
+    {
+        printf("Parent process running...\n");
+        printf("Parent PID: %d\n", getpid());
+
+        wait(NULL);
+
+        printf("Child process collected by parent\n");
+        printf("No zombie process exists\n");
+    }
+
+    return 0;
+}
