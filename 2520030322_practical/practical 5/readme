@@ -1,1 +1,5 @@
+This project is a small C program that runs the Linux ls -l command from inside C code. It most likely does this with fork() and exec(): fork() creates a child process, and exec() replaces that child with ls -l. The parent may wait for the child to finish before exiting.
 
+The output is a detailed file listing. Each line shows a file's permissions, owner, size, last-modified date and name. The idea is to show how a program can start another program, which is what a shell does every time you type a command.
+
+I can't see the code, so this is inferred from the output. If you paste it, I can tell you exactly what it does.
